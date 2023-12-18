@@ -1,21 +1,16 @@
 {
   "version": 2,
-  "name": "shanetextile",
+  "name": "toronto",
   "builds": [
     {
-      "src": "./index.js",
+      "src": "index.js", 
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "index.js"
     }
   ]
 }
- 
