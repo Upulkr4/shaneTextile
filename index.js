@@ -15,8 +15,9 @@ app.use(express.json());
 
 const port = process.env.PORT || 5050;
 
-// CORS preflight middleware
-app.options("/api", cors());
+app.use(cors({
+  origin: '*'
+}));
 
 app.post("/api", async (req, res) => {
   try {
