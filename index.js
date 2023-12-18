@@ -27,9 +27,6 @@ app.post("/api", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("hellow docker");
-});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
