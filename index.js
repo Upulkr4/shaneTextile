@@ -7,13 +7,16 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: '*'
-}));
+// Enable all CORS requests
+app.use(cors());
 
+// Parse JSON requests
 app.use(express.json());
 
 const port = process.env.PORT || 5050;
+
+// CORS preflight middleware
+app.options("/api", cors());
 
 app.post("/api", async (req, res) => {
   try {
@@ -24,11 +27,10 @@ app.post("/api", async (req, res) => {
 
     res.json({ msg: "Your message sent successfully" });
   } catch (error) {
-    console.error(error); // Log the error for debugging purposes
+    console.error(error);
     res.status(500).json({ msg: "Internal Server Error ❌" });
   }
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
