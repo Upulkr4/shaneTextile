@@ -5,14 +5,11 @@ import EmailSender from "./sendEmail.js";
 const app = express();
 app.use(
   cors({
-    origin: '*',
-
+    origin: "*",
   })
 );
 
 dotenv.config();
-
-
 
 app.use(express.json());
 
@@ -24,7 +21,7 @@ app.options("/api", cors());
 app.post("/api", async (req, res) => {
   try {
     const { fullName, email, phone, message } = req.body;
-
+console.log(req.body)
     // Assuming EmailSender returns a promise
     await EmailSender({ fullName, email, phone, message });
 
