@@ -12,3 +12,6 @@ build/
 
 # Ignore files in the dist/ directory
 dist/
+
+
+.env
