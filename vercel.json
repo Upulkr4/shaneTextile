@@ -1,15 +1,16 @@
 {
   "version": 2,
+  "name": "toronto",
   "builds": [
     {
       "src": "index.js", 
-      "use": "@now/node-server"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/.*",
-      "dest": "/api/index.js" 
+      "src": "/(.*)",
+      "dest": "index.js"
     }
   ]
 }
