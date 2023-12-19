@@ -5,7 +5,7 @@ import EmailSender from "./sendEmail.js";
 
 app.use(
   cors({
-    origin: "https://od9bfnzlxf.execute-api.us-west-2.amazonaws.com",
+    origin: "https://shane-textile-email-api-git-main-upulkr.vercel.app",
     methods: ["GET", "POST", "PUT"],
   })
 );
