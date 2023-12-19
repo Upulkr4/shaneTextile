@@ -3,15 +3,16 @@ import dotenv from "dotenv";
 import cors from "cors";
 import EmailSender from "./sendEmail.js";
 
-dotenv.config();
-
-const app = express();
-
 app.use(
   cors({
+    origin: "https://od9bfnzlxf.execute-api.us-west-2.amazonaws.com",
     methods: ["GET", "POST", "PUT"],
   })
 );
+
+dotenv.config();
+
+const app = express();
 
 app.use(express.json());
 
