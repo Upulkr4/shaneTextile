@@ -7,17 +7,18 @@ dotenv.config();
 
 const app = express();
 
-// Enable all CORS requests
-app.use(cors());
+app.use(
+  cors({
+    methods: ["GET", "POST", "PUT"],
+  })
+);
 
-// Parse JSON requests
 app.use(express.json());
 
 const port = process.env.PORT || 5050;
 
-app.use(cors({
-  origin: '*'
-}));
+// Enable preflight for the /api route
+app.options("/api", cors());
 
 app.post("/api", async (req, res) => {
   try {
