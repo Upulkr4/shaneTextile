@@ -2,17 +2,17 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import EmailSender from "./sendEmail.js";
-
+const app = express();
 app.use(
   cors({
-    origin: "https://shane-textile-email-api-git-main-upulkr.vercel.app",
+    origin: '*',
     methods: ["GET", "POST", "PUT"],
   })
 );
 
 dotenv.config();
 
-const app = express();
+
 
 app.use(express.json());
 
